@@ -2,7 +2,7 @@ TEST v0.0.1
 
 # Update sub modules
 ```
-git submodule foreach update --recursive --remote
+git submodule foreach git submodule update --remote --rebase --recursive
 ```
 
 .gitmodules
