@@ -3,7 +3,7 @@ name: integration
 on:
   push:
     paths:
-    - 'test2/**'
+    - 'toast/test2/**'
     - 'sdk/**'
     - 'gamemode/**'
   pull_request:
