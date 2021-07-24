@@ -4,3 +4,4 @@
 [submodule "toast/test2"]
 	path = toast/test2
 	url = https://github.com/YannBCF/test2
+	branck = "dev"
