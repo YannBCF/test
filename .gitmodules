@@ -1,5 +1,5 @@
 [submodule "test2"]
-	path = test2
+	path = doesitwork
 	url = https://github.com/YannBCF/test2
 [submodule "toast/test2"]
 	path = toast/test2
