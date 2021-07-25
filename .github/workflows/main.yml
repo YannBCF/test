@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - powershell: |
-      git config --global user.email "user@email.com"
-      git config --global user.name "name"
-      git add .
-      git commit -m "commit the submodule's changes to owning repo" 
-      git push
+        git config --global user.email "user@email.com"
+        git config --global user.name "name"
+        git add .
+        git commit -m "commit the submodule's changes to owning repo" 
+        git push
