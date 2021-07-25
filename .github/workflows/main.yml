@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          repository: YannBCF/test2
           token: ${{ secrets.ALL }}
       - run: |
           date > generated.txt
