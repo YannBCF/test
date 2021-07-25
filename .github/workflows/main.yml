@@ -13,3 +13,10 @@ jobs:
       uses: srt32/git-actions@v0.0.3
       with:
         args: git submodule update --init --recursive
+    - name: Push
+    - powershell: |
+        git config --global user.email "user@email.com"
+        git config --global user.name "name"
+        git add .
+        git commit -m "commit the submodule's changes to owning repo" 
+        git push
