@@ -10,4 +10,6 @@ jobs:
       - name: Test lol
         run: |
           echo "Building lol"
+          echo "should build"
           git submodule update --remote --rebase --recursive
+          npm run rebase-submodule
