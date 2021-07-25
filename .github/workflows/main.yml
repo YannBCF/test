@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: false
-          fetch-depth: 1
       - run: |
           date > generated.txt
           git submodule update --init --recursive
