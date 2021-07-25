@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test lol
+      - uses: actions/checkout@v2
         run: |
           echo "Building lol"
           echo "should build"
           git submodule update --remote --rebase --recursive
-          npm run rebase-submodule
