@@ -7,20 +7,11 @@ jobs:
     name: TEST
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: srt32/git-actions@v0.0.3
-      with:
-        args: git submodule update --init --recursive
-
-  push:
-    name: 'BUILD'
-    runs-on: ubuntu-latest
-    steps:
-      - powershell: |
-                git config --global user.email "user@email.com"
-                git config --global user.name "name"
-                git add .
-                git commit -m "commit the submodule's changes to owning repo" 
-                git push
+      - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
