@@ -1,0 +1,13 @@
+name: Deploy
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: TEST
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test lol
+        run: |
+          echo "Building lol"
+          sleep 10s
