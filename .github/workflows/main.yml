@@ -10,8 +10,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.CI_TOKEN }}
-          submodules: 'recursive'
+          submodules: 'true'
       - run: |
+          git submodule update --rebase --recursive
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
