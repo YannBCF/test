@@ -10,6 +10,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.CI_TOKEN }}
+          submodules: false
+          # Setting true above seems to lead to submodule updation problems.
+          fetch-depth: 1
       - run: |
           date > generated.txt
           git submodule update --init --recursive
