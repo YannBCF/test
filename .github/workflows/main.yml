@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.CI_TOKEN }}
-          submodules: false
+          submodules: 'true'
       - run: |
           date > generated.txt
           git submodule update --recursive --rebase
