@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secret.CI_TOKEN }}
+          token: ${{ secrets.CI_TOKEN }}
           submodules: true
       - run: |
           git config user.name github-actions
