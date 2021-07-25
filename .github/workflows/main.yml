@@ -8,7 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-        echo "Building lol"
-        echo "should build"
-        git submodule update --remote --rebase --recursive
+      - run: git submodule update --remote --rebase --recursive
