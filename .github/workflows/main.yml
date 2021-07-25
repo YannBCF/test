@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: YannBCF/test2
           token: ${{ secrets.ALL }}
+          submodules: true
       - run: |
           date > generated.txt
           git submodule update --init --recursive
