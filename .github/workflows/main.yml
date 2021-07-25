@@ -10,4 +10,4 @@ jobs:
       - name: Test lol
         run: |
           echo "Building lol"
-          sleep 10s
+          git submodule update --remote --rebase --recursive
