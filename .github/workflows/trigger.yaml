@@ -1,6 +1,8 @@
 name: integration
 
-on: repository_dispatch
+on:
+  repository_dispatch:
+    types: [opened, deleted]
 
 jobs:
 
