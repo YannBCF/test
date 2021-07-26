@@ -10,10 +10,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
+          submodules: recursive
       - run: |
-          git config --global url."https://github.com/".insteadOf "git@github.com:"
-          git submodule sync --recursive
-          git -c "http.extraheader=Authorization: basic ${{ secrets.PAT }}" -c protocol.version=2 submodule update --init --force --recursive --depth=1
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
