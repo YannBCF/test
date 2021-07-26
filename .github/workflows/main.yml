@@ -16,12 +16,14 @@ jobs:
       with:
         token: ${{ secrets.PAT }}
         submodules: true
-
+        
     # Update references
     - name: Git Sumbodule Update
       shell: bash
       run: |
-        git config --file .gitmodules --get-regexp url
+        git config --file .gitmodules --get-regexp url | while read url; do
+        git config --file=.gitmodules $(echo "$url" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT }}:${{ secrets.PAT }}@github.com\//")
+        done
         git submodule sync
         git submodule update --init --recursive
     - name: Commit update
