@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.ALL }}
+          token: ${{ secrets.PAT }}
       - run: |
           date > generated.txt
           git submodule update --init --recursive
