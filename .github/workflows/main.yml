@@ -11,9 +11,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - run: |
-          git config --file .gitmodules --get-regexp url | while read url; do
-            git config --file=.gitmodules
-          done
+          git config --file .gitmodules --get-regexp url | while read url;
           git submodule sync
           git submodule update --init --recursive
           git config user.name github-actions
