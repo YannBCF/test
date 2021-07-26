@@ -11,10 +11,9 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - run: |
-          git config --file .gitmodules --get-regexp url | while read url;
-          date > generated.txt
-          git submodule update --init --recursive
-          git submodule update --remote --rebase --recursive
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git submodule sync --recursive
+          git -c "http.extraheader=Authorization: basic ${{ secrets.PAT }}" -c protocol.version=2 submodule update --init --force --recursive --depth=1
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
