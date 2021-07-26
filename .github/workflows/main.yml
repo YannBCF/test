@@ -1,21 +1,21 @@
-name: Deploy
+# name: Deploy
 
-on: workflow_dispatch
+# on: workflow_dispatch
 
-jobs:
-  build:
-    name: TEST
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
-      - run: |
-          git config --file .gitmodules --get-regexp url | while read url;
-          git submodule sync
-          git submodule update --init --recursive
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "Update submodules"
-          git push
+# jobs:
+#   build:
+#     name: TEST
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           token: ${{ secrets.PAT }}
+#       - run: |
+#           git config --file .gitmodules --get-regexp url | while read url;
+#           git submodule sync
+#           git submodule update --init --recursive
+#           git config user.name github-actions
+#           git config user.email github-actions@github.com
+#           git add .
+#           git commit -m "Update submodules"
+#           git push
