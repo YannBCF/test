@@ -20,7 +20,7 @@ jobs:
     - name: Git Sumbodule Update
       shell: bash
       run: |
-        git config --file .gitmodules
+        git config --file .gitmodules --get-regexp url
         git submodule sync
         git submodule update --init --recursive
     - name: Commit update
