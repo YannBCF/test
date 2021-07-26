@@ -9,11 +9,6 @@ jobs:
     name: 'Submodules Sync'
     runs-on: ubuntu-latest
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
-    defaults:
-      run:
-        shell: bash
-
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
@@ -24,9 +19,11 @@ jobs:
 
     # Update references
     - name: Git Sumbodule Update
+      shell: bash
       run: |
-        git submodule sync
-        git submodule update --init --rebase --recursive
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
     - name: Commit update
       run: |
