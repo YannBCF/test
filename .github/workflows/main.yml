@@ -9,9 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git config --file .gitmodules --get-regexp url | while read url; do
-            git config --file=.gitmodules $(echo "$url" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.ALL }}:${{ secrets.ALL }}@github.com\//")
-          done
           date > generated.txt
           git submodule update --init --recursive
           git submodule update --remote --merge --recursive
