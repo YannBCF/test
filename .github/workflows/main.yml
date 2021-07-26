@@ -11,9 +11,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - run: |
-          git config --file .gitmodules --get-regexp url | while read url; do
-            git config --file=.gitmodules $(echo "$url" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT }}:${{ secrets.PAT }}@github.com\//")
-          done
+          git config --file .gitmodules --get-regexp url | while read url;
           date > generated.txt
           git submodule update --init --recursive
           git submodule update --remote --rebase --recursive
