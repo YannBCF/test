@@ -11,5 +11,3 @@ git submodule update --remote --rebase --recursive
 	path = my/module
 	branch = master
 ```
-
-🏺
