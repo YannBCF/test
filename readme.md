@@ -10,5 +10,5 @@ git submodule update --remote --rebase --recursive
 [submodule "my/module"]azeazeaze
 	path = myazeaze/moduleazeazeazeaeze
 	branch = masteraz"ezeazeaze
-```aze
+```azeazeaze
 a
